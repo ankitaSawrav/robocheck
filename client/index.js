@@ -49,6 +49,7 @@ console.log(userInput,"userInput")
     console.log(roboPosition, "roboPosition") 
  }
  if(userInputArray[0].toUpperCase() === "LEFT" ){
+    console.log("in line 52 left ")
     console.log(roboPosition, "roboPosition") 
     const userInputFacingArray = userInputArray[0].split(",")
     const movement = userInputFacingArray[0].toUpperCase()
@@ -63,7 +64,8 @@ console.log(userInput,"userInput")
  }
 
  if(userInputArray[0].toUpperCase() === "RIGHT" ){
-    console.log(roboPosition, "roboPosition") 
+
+    console.log(roboPosition, "roboPosition in line 68 right") 
     
     const movement = userInputArray[0].toUpperCase()
     console.log(movement,"robo details")
@@ -77,25 +79,50 @@ console.log(userInput,"userInput")
     console.log(roboPosition,"Roboposition")
  }
 
- if(userInputArray[0].toUpperCase() === "MOVE" &&(roboPosition["Facing"]== "EAST" || "WEST")){
-
-    console.log(" in move ")
-    let oldvalue = Number(roboPosition.X) + 1
-    console.log(oldvalue)
+ if(userInputArray[0].toUpperCase() === "MOVE" ){
+    if(roboPosition["Facing"]== "EAST" ){
+    console.log(" in EAST ")
+    let newvalueX = Number(roboPosition.X) + 1
+    console.log(newvalueX)
     roboPosition = {
             ...roboPosition,
-            X: oldvalue
+            X: newvalueX
         }
         console.log(roboPosition)
- }
-//  if(userInputArray[0].toUpperCase() == "MOVE" &&(roboPosition[Facing]== "EAST" || "WEST")){
+    }
+    if(roboPosition["Facing"]== "WEST" ){
+        console.log(" in West ")
+        let newvalueX = Number(roboPosition.X) - 1
+        console.log(newvalueX)
+        roboPosition = {
+                ...roboPosition,
+                X: newvalueX
+            }
+            console.log(roboPosition)
+        }
+    if(roboPosition["Facing"]== "NORTH" ){
+        console.log(" in North ")
+        let newvalueY = Number(roboPosition.Y) + 1
+        console.log(newvalueY)
+        roboPosition = {
+                ...roboPosition,
+                Y: newvalueY
+            }
+            console.log(roboPosition)
+        }
+    if(roboPosition["Facing"]== "SOUTH" ){
+        console.log(" in South ")
+        let newValueY = Number(roboPosition.Y) - 1
+        console.log(newValueY)
+        roboPosition = {
+                ...roboPosition,
+                Y: newValueY
+            }
+            console.log(roboPosition)
+        }
     
-//     roboPosition = {
-//         ...roboPosition,
-//         Y: roboPosition[Y]+1
-//     }
-//     console.log(roboPosition,"line89")
-//  }
+ }
+
 
 
 }
