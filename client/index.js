@@ -26,18 +26,18 @@ const userInput = document.getElementById('input-textbox')
 console.log(userInput, "here")
 
 // userInput.addEventListener('submit', handleOnSubmit);
-let roboPosition = {}
+let globalRoboPosition = {}
 
 
 function handleOnSubmit(e) {
     const userInputRobo = document.getElementById('input-textbox').value
     console.log(userInputRobo,"on handle submit")
-    let newRoboPosition = roboCommand(userInputRobo)
+    globalRoboPosition = roboCommand(userInputRobo,globalRoboPosition)
 }
 
 
-function roboCommand(userInputRobo) {
-
+function roboCommand(userInputRobo,roboPosition) {
+   
     // const userInput =  document.getElementById('input-textbox').value
     // console.log(userInput, "userInput")
     // const userInputRobo = document.getElementById('input-textbox').value
@@ -140,9 +140,9 @@ function roboCommand(userInputRobo) {
             console.log(roboPosition)
         }
 
-
     }
-
-
-
+    if(userInputArray[0].toUpperCase() === "REPORT"){
+        console.log(roboPosition)
+    }
+    return roboPosition
 }
