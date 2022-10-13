@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
-    "start":"./node_modules/nodemon/bin/nodemon.js server.js",
+    "start": "./node_modules/nodemon/bin/nodemon.js server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +13,8 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
     "package.json": "^2.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
   }
 }
