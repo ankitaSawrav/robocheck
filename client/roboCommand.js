@@ -1,4 +1,22 @@
 
+const positionDirection = {
+    NORTH: {
+        LEFT: "WEST",
+        RIGHT: "EAST"
+    },
+    SOUTH: {
+        LEFT: "EAST",
+        RIGHT: "WEST"
+    },
+    EAST: {
+        LEFT: "NORTH",
+        RIGHT: "SOUTH"
+    },
+    WEST: {
+        LEFT: "SOUTH",
+        RIGHT: "NORTH"
+    }
+}
 
 
 function roboCommand(userInputRobo,roboPosition) { 
@@ -25,7 +43,7 @@ function roboCommand(userInputRobo,roboPosition) {
     }
 
     if (userInputArray[0].toUpperCase() === "MOVE") {
-        roboPosition = Move(roboPosition)
+        roboPosition = move(roboPosition)
 
     }
     // if(userInputArray[0].toUpperCase() === "REPORT"){
@@ -50,15 +68,14 @@ function Place(userInputArray, roboPosition) {
     console.log(roboPosition, "roboPosition")
     return roboPosition
 }
-
-function Move(roboPosition) {
+ function move(roboPosition) {
     if (roboPosition["Facing"] == "EAST" && roboPosition.X < 5) {
         
         let newvalueX = Number(roboPosition.X) + 1
       
         roboPosition = {
             ...roboPosition,
-            X: newvalueX
+            X: newvalueX.toString()
         }
         console.log(roboPosition)
     }
@@ -68,7 +85,7 @@ function Move(roboPosition) {
        
         roboPosition = {
             ...roboPosition,
-            X: newvalueX
+            X: newvalueX.toString()
         }
         console.log(roboPosition)
     }
@@ -78,7 +95,7 @@ function Move(roboPosition) {
         console.log(newvalueY)
         roboPosition = {
             ...roboPosition,
-            Y: newvalueY
+            Y: newvalueY.toString()
         }
         console.log(roboPosition)
     }
@@ -88,7 +105,7 @@ function Move(roboPosition) {
         console.log(newValueY)
         roboPosition = {
             ...roboPosition,
-            Y: newValueY
+            Y: newValueY.toString()
         }
         console.log(roboPosition)
     }
@@ -98,9 +115,9 @@ function Move(roboPosition) {
 function turnRight(roboPosition) {
     const movement = "RIGHT"
     roboOldFacing = roboPosition["Facing"]
-    console.log(roboOldFacing, "roboOldFacing")
+    // console.log(roboOldFacing, "roboOldFacing")
 
-    console.log(positionDirection[roboPosition["Facing"]][movement], "positionDirection[roboOldFacing][movement]")
+    // console.log(positionDirection[roboPosition["Facing"]][movement], "positionDirection[roboOldFacing][movement]")
     let newfacing = positionDirection[roboOldFacing][movement]
     console.log(newfacing, "newfacing")
     roboPosition = {
