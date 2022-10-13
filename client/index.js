@@ -58,19 +58,19 @@ function roboCommand(e) {
     roboPosition = {...roboPosition,Facing:newfacing}
     console.log(roboPosition,"Roboposition")
  }
- if(userInputArray[0].toUpperCase() === "RIGHT" ){
-    console.log(roboPosition, "roboPosition") 
-    const userInputFacingArray = userInputArray[0].split(",")
-    const movement = userInputFacingArray[0].toUpperCase()
-    console.log(movement,"robo details")
-    roboOldFacing = roboPosition["Facing"]
-    console.log(roboOldFacing,"roboOldFacing") 
-    console.log(positionDirection[roboPosition["Facing"]][movement],"positionDirection[roboOldFacing][movement]")
-    let newfacing = positionDirection[roboOldFacing][movement]
-    console.log(newfacing,"newfacing")
-    roboPosition = {...roboPosition,Facing:newfacing}
-    console.log(roboPosition,"Roboposition")
- }
+//  if(userInputArray[0].toUpperCase() === "RIGHT" ){
+//     console.log(roboPosition, "roboPosition") 
+//     const userInputFacingArray = userInputArray[0].split(",")
+//     const movement = userInputFacingArray[0].toUpperCase()
+//     console.log(movement,"robo details")
+//     roboOldFacing = roboPosition["Facing"]
+//     console.log(roboOldFacing,"roboOldFacing") 
+//     console.log(positionDirection[roboPosition["Facing"]][movement],"positionDirection[roboOldFacing][movement]")
+//     let newfacing = positionDirection[roboOldFacing][movement]
+//     console.log(newfacing,"newfacing")
+//     roboPosition = {...roboPosition,Facing:newfacing}
+//     console.log(roboPosition,"Roboposition")
+//  }
 
 
 
