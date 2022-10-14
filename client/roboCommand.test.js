@@ -82,7 +82,7 @@ test("to check if the robo X-position decreases as it moves from east to WEST ,i
     expect(result2).toEqual({X: 3, Y: 0, Facing: 'WEST'})
 })
 
-test("to check if the robo Y-position decreases as it moves from north to South ,if current position is (0,4,SOUTH)i.e at end of table and user enters move command", () =>{
+test("to check if the robo Y-positionvlue  decreases as it moves from north to South ,if current position is (0,4,SOUTH)i.e at end of table and user enters move command", () =>{
     const result = roboCommand("place 0,4,SOUTH",{})
     const result2 = roboCommand("move",result)
     expect(result2).toEqual({X: 0, Y: 3, Facing: 'SOUTH'})
@@ -92,4 +92,9 @@ test("to check if user enters the table position outside ", () =>{
     const result = roboCommand("place 5,0,SOUTH",{})
     const result2 = roboCommand("move",result)
     expect(result2).toEqual({})
+})
+
+test("to check if user enters any invalid robo facing",() => {
+    const result = roboCommand("place 5,0,kjdskjfhsd",{})
+    expect(result).toEqual({})
 })
