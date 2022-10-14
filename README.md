@@ -1,8 +1,10 @@
 # RoBocheck 
-Robo check is a simple application. In this application, a toy robot is simulated moving on a 5x5 quadrilateral tabletop.
+Robo check is a simple application. In this application, a toy robot is simulated moving on a 5x5 square tabletop.
 
 ## Approach :
-  an Iterative incremental method is used to Build the application. starting with the smallest unit where user enters the place command and the Robot is set on the table 
+  An Iterative incremental method is used to Build the application. Starting with the smallest unit where user enters the place command and the Robot is set on the table and then building an additional command at a time.
+  
+  Unit testing is done using Jest.
 
 ## Features
 - User can place the Toy Robot on the table using : Place X,Y,Facing. where X,Y  are the robot position and facing can have NORTH, SOUTH, EAST or WEST.
@@ -13,23 +15,24 @@ Robo check is a simple application. In this application, a toy robot is simulate
 - On REPORT command the Current position of the robot is displayed.
 
 #Assumptions :
-- the origin is (0,0) is considered to be the SOUTH WEST most corner.
-- place command is entered by the user in the fomat and should have all values : PLACE X,Y,F
+- The origin is (0,0) is considered to be the SOUTH WEST most corner.
+- Place command is entered by the user in the format and should have all values : PLACE X,Y,Facing
 
 ##Technologies :
 - Nodejs
 - Jest
+- JavaScript
 
 ## installation steps :
 ```
  ### Instructions for Npm installation:
- 
+    - Download the folder or git clone 
     $ npm install 
     $ npm start
     $ npm run start-dev
 
-- Download the folder or git clone 
-- npm install -- save-dev jest 
+
+    - npm install -- save-dev jest 
 ```
 
 
@@ -42,9 +45,26 @@ test data Examples :
 
    Output : 0,0,south
 
-2) Place 4,4,East 
+2)  Place 4,4,East 
     move 
     left
     move
-    Output : 4,4,North  
+    Output : 4,4,  
 
+3)  PLACE 0,0,NORTH
+    MOVE
+    REPORT
+    Output: 0,1,NORTH
+
+4)  PLACE 0,0,NORTH
+    LEFT
+    REPORT
+    Output: 0,0,WEST
+
+5)  PLACE 1,2,EAST
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    REPORT
+    Output: 3,3,NORTH
