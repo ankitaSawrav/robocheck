@@ -28,28 +28,29 @@ function roboCommand(userInputRobo,roboPosition) {
     console.log(userInputRobo, "robo position")
     const userInputArray = userInputRobo.split(' ')
     console.log(userInputArray[0].toUpperCase())
-
+    // if((userInputArray[0].toUpperCase() === "MOVE")||(userInputArray[0].toUpperCase() === "LEFT)"||(userInputArray[0].toUpperCase() === "RIGHT") && (isEmpty = Object.keys(roboPosition).length === 0))){
+    //         console.log("Robo position not set up")
+    // }
 
     if (userInputArray[0].toUpperCase() === "PLACE") {
         roboPosition = Place(userInputArray, roboPosition)
     }
-    if (userInputArray[0].toUpperCase() === "LEFT") {
+    if (userInputArray[0].toUpperCase() === "LEFT" && (isEmpty = Object.keys(roboPosition).length !== 0)) {
         roboPosition = turnLeft(roboPosition)
     }
 
-    if (userInputArray[0].toUpperCase() === "RIGHT") {
+    if (userInputArray[0].toUpperCase() === "RIGHT" && (isEmpty = Object.keys(roboPosition).length !== 0)) {
 
         roboPosition = turnRight(roboPosition)
     }
 
-    if (userInputArray[0].toUpperCase() === "MOVE") {
+    if (userInputArray[0].toUpperCase() === "MOVE" && (isEmpty = Object.keys(roboPosition).length !== 0)) {
         roboPosition = move(roboPosition)
 
     }
     // if(userInputArray[0].toUpperCase() === "REPORT"){
-    //     const pEl = document.createElement("p")
-    //     pEl.textContent = roboPosition
-    //     body.appendChild(pEl)
+    //     const pEl = document.getElementById("report-contr")
+    //     pEl.textContent = "robo position "+ roboPosition['X']+"," + roboPosition.Y + ","+roboPosition.Facing
     // }
     return roboPosition
 }
