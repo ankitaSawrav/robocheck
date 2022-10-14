@@ -28,9 +28,6 @@ function roboCommand(userInputRobo,roboPosition) {
     console.log(userInputRobo, "robo position")
     const userInputArray = userInputRobo.split(' ')
     console.log(userInputArray[0].toUpperCase())
-    // if((userInputArray[0].toUpperCase() === "MOVE")||(userInputArray[0].toUpperCase() === "LEFT)"||(userInputArray[0].toUpperCase() === "RIGHT") && (isEmpty = Object.keys(roboPosition).length === 0))){
-    //         console.log("Robo position not set up")
-    // }
 
     if (userInputArray[0].toUpperCase() === "PLACE") {
         roboPosition = Place(userInputArray, roboPosition)
@@ -57,26 +54,30 @@ function roboCommand(userInputRobo,roboPosition) {
 function Place(userInputArray, roboPosition) {
     const userInputFacingArray = userInputArray[1].split(",")
 
-    const x = userInputFacingArray[0]
-    const y = userInputFacingArray[1]
+    const x = Number(userInputFacingArray[0])
+    const y = Number(userInputFacingArray[1])
     const facing = userInputFacingArray[2].toUpperCase()
     console.log(x, y, facing, "robo details")
-    roboPosition = {
-        X: x,
-        Y: y,
-        Facing: facing
+    if((x <= 4 && x >= 0)&& (y <= 4 && y >= 0)){ 
+       console.log("in valid x,y")
+        roboPosition = {
+            X: x,
+            Y: y,
+            Facing: facing
+        }
+        console.log(roboPosition, "roboPosition")
     }
     console.log(roboPosition, "roboPosition")
     return roboPosition
 }
  function move(roboPosition) {
-    if (roboPosition["Facing"] == "EAST" && roboPosition.X < 5) {
+    if (roboPosition["Facing"] == "EAST" && roboPosition.X < 4) {
         
         let newvalueX = Number(roboPosition.X) + 1
       
         roboPosition = {
             ...roboPosition,
-            X: newvalueX.toString()
+            X: newvalueX
         }
         console.log(roboPosition)
     }
@@ -86,17 +87,18 @@ function Place(userInputArray, roboPosition) {
        
         roboPosition = {
             ...roboPosition,
-            X: newvalueX.toString()
+            // X: newvalueX.toString()
+            X: newvalueX
         }
         console.log(roboPosition)
     }
-    if (roboPosition["Facing"] == "NORTH" && roboPosition.Y < 5) {
+    if (roboPosition["Facing"] == "NORTH" && roboPosition.Y < 4) {
         console.log(" in North ")
-        let newvalueY = Number(roboPosition.Y) + 1
-        console.log(newvalueY)
+        let newValueY = Number(roboPosition.Y) + 1
+        console.log(newValueY)
         roboPosition = {
             ...roboPosition,
-            Y: newvalueY.toString()
+            Y: newValueY
         }
         console.log(roboPosition)
     }
@@ -106,7 +108,7 @@ function Place(userInputArray, roboPosition) {
         console.log(newValueY)
         roboPosition = {
             ...roboPosition,
-            Y: newValueY.toString()
+            Y: newValueY
         }
         console.log(roboPosition)
     }
