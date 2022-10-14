@@ -1,24 +1,5 @@
-// const roboCommand = require('./roboCommand')
-console.log("hello")
-// const positionDirection = {
-//     NORTH: {
-//         LEFT: "WEST",
-//         RIGHT: "EAST"
-//     },
-//     SOUTH: {
-//         LEFT: "EAST",
-//         RIGHT: "WEST"
-//     },
-//     EAST: {
-//         LEFT: "NORTH",
-//         RIGHT: "SOUTH"
-//     },
-//     WEST: {
-//         LEFT: "SOUTH",
-//         RIGHT: "NORTH"
-//     }
-// }
 
+console.log("hello")
 
 const userInput = document.getElementById('input-textbox')
 
@@ -28,8 +9,9 @@ console.log(userInput, "here")
 let globalRoboPosition = {}                                     // stores current position of the Robot
 
 function handleOnSubmit(e) {
-    console.log("in submit")
-    const userInputRobo = document.getElementById('input-textbox').value
-    console.log(userInputRobo,"on handle submit")
-    globalRoboPosition = roboCommand(userInputRobo,globalRoboPosition)
+
+    const userInputRobo = userInput.value
+    userInput.value =""
+
+    globalRoboPosition = roboCommand(userInputRobo,globalRoboPosition)   
 }

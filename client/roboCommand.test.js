@@ -1,4 +1,5 @@
 
+const { default: test } = require('node:test');
 const roboCommand = require('./roboCommand')
 
 
@@ -98,3 +99,4 @@ test("to check if user enters any invalid robo facing",() => {
     const result = roboCommand("place 5,0,kjdskjfhsd",{})
     expect(result).toEqual({})
 })
+

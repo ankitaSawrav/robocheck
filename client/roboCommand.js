@@ -45,10 +45,12 @@ function roboCommand(userInputRobo,roboPosition) {
         roboPosition = move(roboPosition)
 
     }
-    // if(userInputArray[0].toUpperCase() === "REPORT"){
-    //     const pEl = document.getElementById("report-contr")
-    //     pEl.textContent = "robo position "+ roboPosition['X']+"," + roboPosition.Y + ","+roboPosition.Facing
-    // }
+    if(userInputArray[0].toUpperCase() === "REPORT"){
+
+        const pEl = document.getElementById("report-contr")
+        pEl.textContent = ""
+        pEl.textContent = "OUTPUT: "+ roboPosition['X']+"," + roboPosition.Y + ","+(roboPosition.Facing).toUpperCase()
+    }
     return roboPosition
 }
 function Place(userInputArray, roboPosition) {
