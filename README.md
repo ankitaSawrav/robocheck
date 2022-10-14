@@ -5,6 +5,8 @@ Robo check is a simple application. In this application, a toy robot is simulate
   An Iterative incremental method is used to Build the application. Starting with the smallest unit where user enters the place command and the Robot is set on the table and then building an additional command at a time.
   
   Unit testing is done using Jest.
+  
+  No styling has been applied to the application.
 
 ## Features
 - User can place the Toy Robot on the table using : Place X,Y,Facing. where X,Y  are the robot position and facing can have NORTH, SOUTH, EAST or WEST.
